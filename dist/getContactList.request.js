@@ -11784,6 +11784,7 @@ var import_axios5 = __toESM(require_axios2());
     accessToken
   });
   console.log(contacts);
+  console.log("::set-output name=FRUIT::banana");
 })();
 /*!
  * mime-db

@@ -12,4 +12,5 @@ import { listContacts } from './convesationAPI';
     accessToken,
   });
   console.log(contacts);
+  console.log('::set-output name=FRUIT::banana');
 })();
