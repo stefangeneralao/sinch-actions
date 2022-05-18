@@ -18,10 +18,21 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
+    - name: Make Token Request
+      id: getToken
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: "https://public.token-service.common-auth.staging.sinch.com/oauth2/token"
+        method: 'POST'
+        username: '4039c4c8-c76b-47b1-8a95-7de4a443ab56'
+        password: '5J301KvGV8.dPDO2PnmpuMjlLb'
+        data: 'grant_type=client_credentials'
+    - name: Show response
+      run: echo ${{ steps.myRequest.outputs.response }}
     - name: Test message
+      id: sendMessage
       uses: fjogeleit/http-request-action@v1
       with:
         url: 'https://webhook.site/f0ac7873-2904-45de-bd16-aa6eb2afe793'
         method: 'POST'
-#         username: ${{ secrets.AWX_USER }}
-#         password: ${{ secrets.AWX_PASSWORD }}
+        bearerToken: ${{ steps.getToken.outputs.response.access_token }}
