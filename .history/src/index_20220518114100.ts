@@ -41,7 +41,7 @@ import {
     message: {
       text_message: { text: 'Hello, world!' },
     },
-    contactId: '01G3B8PFV8PY6BXMZRBCJSVBBW',
+    contactId: '01G3B7QGHD6RS98EN09GPZB40R',
     projectId: PROJECT_ID,
     appId: APP_ID,
   });
