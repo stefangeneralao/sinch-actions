@@ -35,4 +35,4 @@ jobs:
           APP_ID: ${{secrets.APP_ID}}
         id: 'get-contact-list'
       - name: Get color
-        run: echo "The selected color is ${{ steps.get-contacts-list.outputs.FRUIT }}"
+        run: echo "The selected color is ${{ steps.get-contact-list.outputs.SELECTED_COLOR }}"

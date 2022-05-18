@@ -12,5 +12,5 @@ import { listContacts } from './convesationAPI';
     accessToken,
   });
   console.log(contacts);
-  console.log('::set-output name=FRUIT::banana');
+  console.log('::set-output name=SELECTED_COLOR::green');
 })();
