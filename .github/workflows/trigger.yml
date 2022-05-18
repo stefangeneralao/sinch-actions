@@ -24,6 +24,7 @@ jobs:
     steps:
       - name: notify the main YML
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EVENT: some_event
           ORG: stefangeneralao
           REPO: sinch-actions
