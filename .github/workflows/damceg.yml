@@ -18,11 +18,8 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-    - name: Setup Node.js
-      uses: actions/setup-node@v3.2.0
+    - uses: borales/actions-yarn@v2.3.0
       with:
-        node-version: 16
-    - name: Install dependencies
-      run: npm ci
+        cmd: install # will run `yarn install` command
     - name: Get contact list
-      run: npm run get:contacts
+      run: yarn run get:contacts
