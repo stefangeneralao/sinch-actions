@@ -26,13 +26,10 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install # will run `yarn install` command
-      - name: Get contact list
-        run: yarn run get:contacts
+      - name: Send messages
+        run: yarn run send:messages
         env:
           CLIENT_ID: ${{secrets.CLIENT_ID}}
           CLIENT_SECRET: ${{secrets.CLIENT_SECRET}}
           PROJECT_ID: ${{secrets.PROJECT_ID}}
           APP_ID: ${{secrets.APP_ID}}
-        id: 'get-contact-list'
-      - name: Get color
-        run: echo "The selected color is ${{ steps.get-contact-list.outputs.SELECTED_COLOR }}"

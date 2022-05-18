@@ -11771,20 +11771,61 @@ var import_axios3 = __toESM(require_axios2());
 
 // src/convesationAPI/sendMessage.ts
 var import_axios4 = __toESM(require_axios2());
+var sendMessage = async ({
+  accessToken,
+  message,
+  contactId,
+  projectId,
+  appId
+}) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${accessToken}`
+    }
+  };
+  const data = {
+    app_id: appId,
+    recipient: {
+      contact_id: contactId
+    },
+    message
+  };
+  try {
+    await import_axios4.default.post(`https://us.conversation.api.sinch.com/v1/projects/${projectId}/messages:send`, data, config);
+  } catch (e) {
+    console.log("Failed to send message:", e.response.data.error.details[0]);
+  }
+};
 
 // src/convesationAPI/deleteContact.ts
 var import_axios5 = __toESM(require_axios2());
 
-// src/getContactList.request.ts
+// src/sendMessages.request.ts
 (async () => {
   const { CLIENT_ID, CLIENT_SECRET, PROJECT_ID, APP_ID } = process.env;
-  const accessToken = await fetchAccessToken(CLIENT_ID, CLIENT_SECRET);
-  const contacts = await listContacts({
-    projectId: PROJECT_ID,
-    accessToken
-  });
-  console.log(contacts);
-  console.log("::set-output name=SELECTED_COLOR::green");
+  try {
+    const accessToken = await fetchAccessToken(CLIENT_ID, CLIENT_SECRET);
+    const contacts = await listContacts({
+      projectId: PROJECT_ID,
+      accessToken
+    });
+    console.log(contacts);
+    await Promise.all(contacts.map(async (contact) => {
+      const { id: contactId } = contact;
+      sendMessage({
+        accessToken,
+        message: {
+          text_message: { text: "\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F4A9}" }
+        },
+        contactId,
+        projectId: PROJECT_ID,
+        appId: APP_ID
+      });
+    }));
+    console.log("Done!");
+  } catch (e) {
+    console.log(e);
+  }
 })();
 /*!
  * mime-db
