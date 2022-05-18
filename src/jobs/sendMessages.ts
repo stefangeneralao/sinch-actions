@@ -3,32 +3,34 @@ import { fetchAccessToken } from '../fetchAccessToken';
 import { listContacts, sendMessage } from '../convesationAPI';
 
 (async () => {
-  const { CLIENT_ID, CLIENT_SECRET, PROJECT_ID, APP_ID } = process.env;
+  console.log('banana');
 
-  try {
-    const accessToken = await fetchAccessToken(CLIENT_ID, CLIENT_SECRET);
+  // const { CLIENT_ID, CLIENT_SECRET, PROJECT_ID, APP_ID } = process.env;
 
-    const contacts = await listContacts({
-      projectId: PROJECT_ID,
-      accessToken,
-    });
+  // try {
+  //   const accessToken = await fetchAccessToken(CLIENT_ID, CLIENT_SECRET);
 
-    await Promise.all(
-      contacts.map(async (contact: any) => {
-        const { id: contactId } = contact;
+  //   const contacts = await listContacts({
+  //     projectId: PROJECT_ID,
+  //     accessToken,
+  //   });
 
-        sendMessage({
-          accessToken,
-          message: {
-            text_message: { text: '💩💩💩💩💩💩💩' },
-          },
-          contactId,
-          projectId: PROJECT_ID,
-          appId: APP_ID,
-        });
-      })
-    );
-  } catch (e) {
-    console.log(e);
-  }
+  //   await Promise.all(
+  //     contacts.map(async (contact: any) => {
+  //       const { id: contactId } = contact;
+
+  //       sendMessage({
+  //         accessToken,
+  //         message: {
+  //           text_message: { text: '💩💩💩💩💩💩💩' },
+  //         },
+  //         contactId,
+  //         projectId: PROJECT_ID,
+  //         appId: APP_ID,
+  //       });
+  //     })
+  //   );
+  // } catch (e) {
+  //   console.log(e);
+  // }
 })();

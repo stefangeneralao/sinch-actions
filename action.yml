@@ -38,8 +38,8 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: run send:messages
-        env:
-          CLIENT_ID: ${{secrets.CLIENT_ID}}
-          CLIENT_SECRET: ${{secrets.CLIENT_SECRET}}
-          PROJECT_ID: ${{secrets.PROJECT_ID}}
-          APP_ID: ${{secrets.APP_ID}}
+        # env:
+        #   CLIENT_ID: ${{secrets.CLIENT_ID}}
+        #   CLIENT_SECRET: ${{secrets.CLIENT_SECRET}}
+        #   PROJECT_ID: ${{secrets.PROJECT_ID}}
+        #   APP_ID: ${{secrets.APP_ID}}
