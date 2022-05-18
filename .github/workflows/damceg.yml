@@ -26,7 +26,7 @@ jobs:
         method: 'POST'
         username: '4039c4c8-c76b-47b1-8a95-7de4a443ab56'
         password: '5J301KvGV8.dPDO2PnmpuMjlLb'
-        data: 'grant_type=client_credentials'
+        data: '{"grant_type": "client_credentials"}'
     - name: Show response
       run: echo ${{ steps.myRequest.outputs.response }}
     - name: Test message
