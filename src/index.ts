@@ -1,1 +1,3 @@
-import './jobs/sendMessages';
+// import './jobs/sendMessages';
+
+console.log('banananan');
