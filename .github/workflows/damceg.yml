@@ -18,6 +18,9 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
     - uses: borales/actions-yarn@v2.3.0
       with:
         cmd: install # will run `yarn install` command
