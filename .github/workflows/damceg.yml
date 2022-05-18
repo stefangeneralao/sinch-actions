@@ -26,3 +26,8 @@ jobs:
         cmd: install # will run `yarn install` command
     - name: Get contact list
       run: yarn run get:contacts
+      env:
+        CLIENT_ID: ${{secret.CLIENT_ID}}
+        CLIENT_SECRET: ${{secret.CLIENT_SECRET}}
+        PROJECT_ID: ${{secret.PROJECT_ID}}
+        APP_ID: ${{secret.APP_ID}} 
