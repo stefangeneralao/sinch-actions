@@ -21,6 +21,6 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3.2.0
       with:
-        node-version-file: 16.13.2        
+        node-version-file: 16
     - name: Get contact list
       run: npm run get:contacts
