@@ -7,11 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon",
-    "build": "esbuild src/*.request.ts --bundle --platform=node --outdir=dist",
+    "build": "esbuild src/jobs/*.ts --bundle --platform=node --outdir=dist",
     "start:build": "node dist",
-    "get:contacts": "node dist/getContactList.request.js",
-    "send:message": "node dist/sendMessage.request.js",
-    "send:messages": "node dist/sendMessages.request.js"
+    "send:messages": "node dist/sendMessages.js"
   },
   "dependencies": {
     "@types/node": "^17.0.34",

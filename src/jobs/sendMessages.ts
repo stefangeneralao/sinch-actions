@@ -1,6 +1,6 @@
 import 'dotenv/config';
-import { fetchAccessToken } from './fetchAccessToken';
-import { listContacts, sendMessage } from './convesationAPI';
+import { fetchAccessToken } from '../fetchAccessToken';
+import { listContacts, sendMessage } from '../convesationAPI';
 
 (async () => {
   const { CLIENT_ID, CLIENT_SECRET, PROJECT_ID, APP_ID } = process.env;
@@ -12,7 +12,6 @@ import { listContacts, sendMessage } from './convesationAPI';
       projectId: PROJECT_ID,
       accessToken,
     });
-    console.log(contacts);
 
     await Promise.all(
       contacts.map(async (contact: any) => {
@@ -29,7 +28,6 @@ import { listContacts, sendMessage } from './convesationAPI';
         });
       })
     );
-    console.log('Done!');
   } catch (e) {
     console.log(e);
   }
