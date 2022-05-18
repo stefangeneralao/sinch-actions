@@ -27,7 +27,7 @@ jobs:
     - name: Get contact list
       run: yarn run get:contacts
       env:
-        CLIENT_ID: ${{secret.CLIENT_ID}}
-        CLIENT_SECRET: ${{secret.CLIENT_SECRET}}
-        PROJECT_ID: ${{secret.PROJECT_ID}}
-        APP_ID: ${{secret.APP_ID}} 
+        CLIENT_ID: ${{env.CLIENT_ID}}
+        CLIENT_SECRET: ${{env.CLIENT_SECRET}}
+        PROJECT_ID: ${{env.PROJECT_ID}}
+        APP_ID: ${{env.APP_ID}} 
