@@ -22,5 +22,7 @@ jobs:
       uses: actions/setup-node@v3.2.0
       with:
         node-version: 16
+    - name: Install dependencies
+      run: npm ci
     - name: Get contact list
       run: npm run get:contacts
