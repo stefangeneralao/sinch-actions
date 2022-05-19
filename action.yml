@@ -1,21 +1,35 @@
+name: 'Sinch Conversation API'
+
+description: 'Send a message from Github Actions using the Sinch Conversation API'
+
+branding:
+  icon: 'message-square'
+  color: 'yellow'
+
 inputs:
   clientId:
-    description: 'This is a description of clientId'
+    description: 'Sinch clientId'
     required: true
+
   clientSecret:
-    description: 'This is a description of clientSecret'
+    description: 'Sinch clientSecret'
     required: true
+
   projectId:
-    description: 'This is a description of projectId'
+    description: 'Sinch projectId'
     required: true
+
   appId:
-    description: 'This is a description of appId'
+    description: 'Sinch appId'
     required: true
+
   message:
-    description: 'This is a description of message'
+    description: 'Message to send'
     required: true
+
   meta:
     required: false
+
 runs:
   using: 'node12'
   main: 'dist/index.js'
