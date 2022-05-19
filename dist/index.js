@@ -13268,6 +13268,7 @@ var fetchAccessToken = async (clientId, clientSecret) => {
   const clientSecret = core.getInput("clientSecret");
   const projectId = core.getInput("projectId");
   const appId = core.getInput("appId");
+  const message = core.getInput("message");
   try {
     const accessToken = await fetchAccessToken(clientId, clientSecret);
     const contacts = await listContacts({
@@ -13279,7 +13280,7 @@ var fetchAccessToken = async (clientId, clientSecret) => {
       sendMessage({
         accessToken,
         message: {
-          text_message: { text: "\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F4A9}\u{1F34C}" }
+          text_message: { text: message }
         },
         contactId,
         projectId,

@@ -7,6 +7,7 @@ import { fetchAccessToken } from './fetchAccessToken';
   const clientSecret = core.getInput('clientSecret');
   const projectId = core.getInput('projectId');
   const appId = core.getInput('appId');
+  const message = core.getInput('message');
 
   try {
     const accessToken = await fetchAccessToken(clientId, clientSecret);
@@ -23,7 +24,7 @@ import { fetchAccessToken } from './fetchAccessToken';
         sendMessage({
           accessToken,
           message: {
-            text_message: { text: '💩💩💩💩💩💩💩🍌' },
+            text_message: { text: message },
           },
           contactId,
           projectId,

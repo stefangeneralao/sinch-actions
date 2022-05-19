@@ -11,6 +11,9 @@ inputs:
   appId:
     description: 'This is a description of appId'
     required: true
+  message:
+    description: 'This is a description of message'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
