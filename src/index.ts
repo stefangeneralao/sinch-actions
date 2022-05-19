@@ -23,8 +23,6 @@ const parseMessage = (message: string) => {
   const message = core.getInput('message');
   const meta = core.getInput('meta');
 
-  console.log(meta);
-
   try {
     const accessToken = await fetchAccessToken(clientId, clientSecret);
 
