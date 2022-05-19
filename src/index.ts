@@ -12,7 +12,9 @@ const isJson = (str: string) => {
 };
 
 const parseMessage = (message: string) => {
-  return isJson ? JSON.parse(message) : { text_message: { text: message } };
+  return isJson(message)
+    ? JSON.parse(message)
+    : { text_message: { text: message } };
 };
 
 (async () => {
@@ -22,6 +24,8 @@ const parseMessage = (message: string) => {
   const appId = core.getInput('appId');
   const message = core.getInput('message');
   const meta = core.getInput('meta');
+
+  console.log(meta);
 
   try {
     const accessToken = await fetchAccessToken(clientId, clientSecret);

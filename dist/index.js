@@ -13272,7 +13272,7 @@ var isJson = (str) => {
   }
 };
 var parseMessage = (message) => {
-  return isJson ? JSON.parse(message) : { text_message: { text: message } };
+  return isJson(message) ? JSON.parse(message) : { text_message: { text: message } };
 };
 (async () => {
   const clientId = core.getInput("clientId");
