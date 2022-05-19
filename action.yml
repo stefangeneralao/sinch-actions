@@ -1,3 +1,16 @@
 runs:
   using: 'node12'
   main: 'dist/index.js'
+inputs:
+  clientId:
+    description: 'This is a description of clientId'
+    required: true
+  clientSecret:
+    description: 'This is a description of clientSecret'
+    required: true
+  projectId:
+    description: 'This is a description of projectId'
+    required: true
+  appId:
+    description: 'This is a description of appId'
+    required: true
