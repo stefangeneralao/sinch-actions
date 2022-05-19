@@ -2,6 +2,19 @@ import * as core from '@actions/core';
 import { listContacts, sendMessage } from './convesationAPI';
 import { fetchAccessToken } from './fetchAccessToken';
 
+const isJson = (str: string) => {
+  try {
+    JSON.parse(str);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+const parseMessage = (message: string) => {
+  return isJson ? JSON.parse(message) : { text_message: { text: message } };
+};
+
 (async () => {
   const clientId = core.getInput('clientId');
   const clientSecret = core.getInput('clientSecret');
@@ -23,9 +36,7 @@ import { fetchAccessToken } from './fetchAccessToken';
 
         sendMessage({
           accessToken,
-          message: {
-            text_message: { text: message },
-          },
+          message: parseMessage(message),
           contactId,
           projectId,
           appId,
