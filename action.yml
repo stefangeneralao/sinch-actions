@@ -14,6 +14,8 @@ inputs:
   message:
     description: 'This is a description of message'
     required: true
+  meta:
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
