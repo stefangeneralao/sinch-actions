@@ -1,6 +1,3 @@
-runs:
-  using: 'node12'
-  main: 'dist/index.js'
 inputs:
   clientId:
     description: 'This is a description of clientId'
@@ -14,3 +11,6 @@ inputs:
   appId:
     description: 'This is a description of appId'
     required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

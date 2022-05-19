@@ -1,4 +1,4 @@
-import core from '@actions/core';
+import * as core from '@actions/core';
 
 const clientId = core.getInput('clientId');
 const clientSecret = core.getInput('clientSecret');
