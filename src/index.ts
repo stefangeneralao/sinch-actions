@@ -1,31 +1,21 @@
+import 'dotenv/config';
 import * as core from '@actions/core';
 import { listContacts, sendMessage } from './convesationAPI';
-import { fetchAccessToken } from './fetchAccessToken';
-
-const isJson = (str: string) => {
-  try {
-    JSON.parse(str);
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
-
-const parseMessage = (message: string) => {
-  return isJson(message)
-    ? JSON.parse(message)
-    : { text_message: { text: message } };
-};
+import { fetchAccessToken } from './utils/fetchAccessToken';
+import { parseMessage } from './utils';
 
 (async () => {
-  const clientId = core.getInput('clientId');
-  const clientSecret = core.getInput('clientSecret');
-  const projectId = core.getInput('projectId');
-  const appId = core.getInput('appId');
+  const clientId = core.getInput('clientId') || process.env.CLIENT_ID;
+  const clientSecret =
+    core.getInput('clientSecret') || process.env.CLIENT_SECRET;
+  const projectId = core.getInput('projectId') || process.env.PROJECT_ID;
+  const appId = core.getInput('appId') || process.env.APP_ID;
   const message = core.getInput('message');
-  const meta = core.getInput('meta');
+  const meta = core.getInput('meta') || null;
 
-  console.log(meta);
+  if (meta) {
+    console.log(meta);
+  }
 
   try {
     const accessToken = await fetchAccessToken(clientId, clientSecret);
