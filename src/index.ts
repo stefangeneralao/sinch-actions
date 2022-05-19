@@ -21,6 +21,8 @@ const parseMessage = (message: string) => {
   const projectId = core.getInput('projectId');
   const appId = core.getInput('appId');
   const message = core.getInput('message');
+  
+  console.log(message);
 
   try {
     const accessToken = await fetchAccessToken(clientId, clientSecret);
