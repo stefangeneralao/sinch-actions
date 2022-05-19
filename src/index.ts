@@ -12,7 +12,9 @@ const isJson = (str: string) => {
 };
 
 const parseMessage = (message: string) => {
-  return isJson ? JSON.parse(message) : { text_message: { text: message } };
+  return isJson(message)
+    ? JSON.parse(message)
+    : { text_message: { text: message } };
 };
 
 (async () => {
