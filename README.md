@@ -1,15 +1,15 @@
-# sinch-actions
+# Sinch Conversation API Actions
 Send an conversation API message from GitHub Actions.
 
-# Prerequisites
+## Prerequisites
 - Sinch dashboard account
 - Conversation API app
 
 
-# Usage
+## Usage
 1. Create a conversation API with app setup with channels to use. Currently only Telegram can be used.
 
-2. For listening to to PL with certain label add the following to the workflow
+2. For listening to PR with certain label add the following to the workflow
 ```
 - name: Urgent PR was created
 if: contains(github.event.pull_request.labels.*.name, 'urgent')
@@ -36,7 +36,7 @@ with:
 ```
 
 
-# Inputs
+## Inputs
 - clientId: Sinch client id.
 - clientSecret: Sinch client secret key.
 - projectId: Id to your conversation API project.
