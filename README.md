@@ -7,7 +7,7 @@ Send an conversation API message from GitHub Actions.
 
 
 ## Usage
-1. Create a conversation API with app setup with channels to use. Currently only Telegram can be used.
+1. Create a conversation API with app setup with channels to use.
 
 2. For listening to PR with certain label, in example listen PL with "urgent" label, add the following to the workflow
 ```
@@ -60,3 +60,8 @@ Send an conversation API message from GitHub Actions.
 - `projectId`: Id to your conversation API project.
 - `appId`: Id to your conversation API app.
 - `message`: The message you want to send.
+
+## Contributing
+Damian Ceglarz
+Joakim Ysing
+Stefan Generalao
