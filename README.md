@@ -62,8 +62,8 @@ Send an conversation API message from GitHub Actions.
 - `message`: The message you want to send.
 
 ## Contributing
-Damian Ceglarz
+[Damian Ceglarz](https://github.com/damianceglarz)
 
-Joakim Ysing
+[Joakim Ysing](https://github.com/joaysi)
 
-Stefan Generalao
+[Stefan Generalao](https://github.com/stefangeneralao)
