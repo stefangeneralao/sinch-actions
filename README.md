@@ -37,8 +37,8 @@ with:
 
 
 ## Inputs
-- clientId: Sinch client id.
-- clientSecret: Sinch client secret key.
-- projectId: Id to your conversation API project.
-- appId: Id to your conversation API app.
-- message: The message you want to send.
+- `clientId`: Sinch client id.
+- `clientSecret`: Sinch client secret key.
+- `projectId`: Id to your conversation API project.
+- `appId`: Id to your conversation API app.
+- `message`: The message you want to send.
