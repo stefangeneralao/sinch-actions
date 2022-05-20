@@ -63,5 +63,7 @@ Send an conversation API message from GitHub Actions.
 
 ## Contributing
 Damian Ceglarz
+
 Joakim Ysing
+
 Stefan Generalao
