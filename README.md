@@ -1,12 +1,12 @@
 # Sinch Conversation API Actions
-Send an conversation API message from GitHub Actions.
+Send an Conversation API message from GitHub Actions.
 
 ## Prerequisites
 - Sinch dashboard account
 - Conversation API app
 
 ## Usage
-For listening to PR with a label called "urgent", add the following to the workflow:
+For listening to PR with a label called `urgent`, add the following to the workflow:
 ```
 - name: Urgent PR was created
     if: contains(github.event.pull_request.labels.*.name, 'urgent')
